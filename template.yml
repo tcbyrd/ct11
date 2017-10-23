@@ -12,14 +12,11 @@ Resources:
   GetHelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.get
-      Runtime: nodejs4.3
+      FunctionName: ct11-production
+      Handler: index.handler
+      MemorySize: 1024
+      Timeout: 300
+      Runtime: nodejs6.10
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
-      Events:
-        GetEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: get
