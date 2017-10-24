@@ -19,6 +19,6 @@ phases:
         node-lambda package
 artifacts:
   files:
-      - build/ct11-production.zip
+      - build/testDupe-production.zip
   #discard-paths: yes
   #base-directory: location
